@@ -49,7 +49,6 @@ namespace WebApplication1
             //app.UseHttpsRedirection();
             app.UseCors("New");
             app.UseMvc();
-            //app.UseCors("New");
             //app.UseForwardedHeaders(new ForwardedHeadersOptions { ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto });
         }
     }

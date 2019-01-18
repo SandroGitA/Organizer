@@ -4,33 +4,33 @@ using MySql.Data.MySqlClient;
 namespace WebApplication1.Controllers
 {
     public class Connect
-    {
-        static string server = "localhost";
-        //static string user = "root";
-        static string database = "organizer";
-        static int port = 3306;
-        //static string password = "root1311";
-        static string password = "mysql";
-        static string user = "mysql";
+    {        
+        //static string user = "root";//данные для рабочего сервера
+        //static string password = "root1311";//данные для рабочего сервера
 
-        static string connectionString = "server = " + server + "; user = " + user + "; database = " + database + "; port = " + port + "; password = " + password;
+        static readonly string password = "mysql";//test server
+        static readonly string user = "mysql";//test server
+
+        static readonly string database = "organizer";
+        static readonly int port = 3306;
+        static readonly string server = "localhost";
+
+        static readonly string connectionString = "server = " + server + "; user = " + user + "; database = " + database + "; port = " + port + "; password = " + password;
         string connectStatus = "";
 
         public MySqlConnection SqlConnect()
         {
             MySqlConnection connectMySql = new MySqlConnection(connectionString);
-
             try
             {
                 connectMySql.Open();
                 //connectStatus = "OK";
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
-                connectStatus = ex.Message;
+                connectStatus = ex.Message;//записываем сообщение об ошибке, но не возвращаем его(!)
                 //return new string[] { connectStatus };
             }
-
             return connectMySql;
         }
     }

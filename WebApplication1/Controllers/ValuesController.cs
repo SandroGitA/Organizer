@@ -1,81 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using System.Data.SqlClient;
-using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
+
     public class ValuesController : ControllerBase
-    {
-        // GET api/values
-        [HttpGet("[get]")]//исправлено, обычный ответ
-        public string start()
-        {
-            return "200 OK";
-        }
-
+    {        
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public string Get()//Отдаем данные клиенту
         {
-            List<Data> JsonData = new List<Data>();
-
-            Connect connect = new Connect();
-            MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение
-
-            MySqlCommand cmd = new MySqlCommand//запрос к БД
-            {
-                CommandText = "SELECT * FROM organizer",
-                Connection = mySqlConnect
-            };
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                object id = reader.GetValue(0);
-                object label = reader.GetValue(1);
-                object done = reader.GetValue(2);
-                object important = reader.GetValue(3);
-
-                JsonData.Add(new Data() { id = id, label = label, done = done, important = important });
-            }
-
-            mySqlConnect.Close();
-
-            string js = JsonConvert.SerializeObject(JsonData);
-
-            return new string[] { js };
+            GetRequest getRequest = new GetRequest();
+            return getRequest.GetJson();           
+        }       
+        
+        [HttpPost]
+        public void Post(string jsonString)//Принимаем данные от клиента
+        {
+            PostRequest postRequest = new PostRequest();
+            postRequest.PostJson(jsonString);           
         }
 
-        //GET api/values/5
-        //[HttpGet("{id}")]
-        //public ActionResult<IEnumerable<string>> Get(int id)
-        //{
-
-        //    return new string[] { "value" };
-        //}
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string label, string done, string important)
+        [HttpPost("delete")]
+        public string Delete(int id)//удаление записи по ID
         {
-            Connect connect = new Connect();
-            MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение
+            DeleteRequest deleteRequest = new DeleteRequest();
+            return deleteRequest.Delete(id);
+        }
 
-            MySqlCommand cmd = new MySqlCommand
-            {
-                CommandText = "INSERT INTO `organizer` (`label`, `done`,`important`) VALUES("+ label +", "+ done +", "+ important +")",
-                Connection = mySqlConnect
-            };
-
-            mySqlConnect.Close();
+        [HttpGet("edit")]
+        public void Edit(string jsonString)//изменение записи в бд
+        {
+            EditRequest editRequest = new EditRequest();
+            editRequest.Edit(jsonString);
         }
     }
 }
