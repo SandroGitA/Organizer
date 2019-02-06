@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 
@@ -41,7 +42,7 @@ namespace WebApplication1.Controllers
             return js;
         }
 
-        /*public ActionResult<IEnumerable<string>> Get()//Отдаем данные клиенту
+        /*public ActionResult<IEnumerable<string>> GetJson()//Отдаем данные клиенту
         {           
             List<Data> JsonData = new List<Data>();
 

@@ -17,9 +17,11 @@ namespace WebApplication1.Controllers
 
             MySqlCommand cmd = new MySqlCommand
             {
-                CommandText = String.Format("delete from organizer where id = {0}", id),
+                CommandText = string.Format("delete from organizer where id = {0}", id),
                 Connection = mySqlConnect
             };
+
+            int countRows = cmd.ExecuteNonQuery();
 
             try
             {

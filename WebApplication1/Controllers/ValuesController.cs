@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
@@ -15,10 +16,10 @@ namespace WebApplication1.Controllers
         }       
         
         [HttpPost]
-        public void Post(string jsonString)//Принимаем данные от клиента
+        public string Post(string jsonString)//Принимаем данные от клиента строкой, и парсим ее
         {
             PostRequest postRequest = new PostRequest();
-            postRequest.PostJson(jsonString);           
+            return postRequest.PostJson(jsonString);
         }
 
         [HttpPost("delete")]
@@ -28,7 +29,7 @@ namespace WebApplication1.Controllers
             return deleteRequest.Delete(id);
         }
 
-        [HttpGet("edit")]
+        [HttpPost("edit")]
         public void Edit(string jsonString)//изменение записи в бд
         {
             EditRequest editRequest = new EditRequest();

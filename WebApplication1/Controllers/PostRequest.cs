@@ -8,20 +8,22 @@ namespace WebApplication1.Controllers
 {
     public class PostRequest
     {
-        public void PostJson(string jsonString)
+        public string PostJson(string jsonString)
         {
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение           
             //парсим и записывыем в бд
-            //string cmdStatus = "";
+            string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
             {
-                //CommandText = "INSERT INTO organizer (id, label, done, important) VALUES('"+ id +"', '"+ label +"', '"+ done +"', '"+ important +"')",
-                Connection = mySqlConnect
+                CommandText = "INSERT INTO organizer (id, label, done, important) VALUES('"+ jsonString +"', '"+ 1 +"', '"+ 2 +"', '"+ 3 +"')",
+                Connection = mySqlConnect,
             };
-           
-            /*try
+
+            int countRows = cmd.ExecuteNonQuery();
+
+            try
             {
                 mySqlConnect.Close();
                 return "OK";
@@ -29,8 +31,9 @@ namespace WebApplication1.Controllers
             catch(MySqlException ex)
             {
                 cmdStatus = ex.Message;
+                mySqlConnect.Close();
                 return "Error: " + cmdStatus;
-            }*/
+            }
         }
     }
 }
