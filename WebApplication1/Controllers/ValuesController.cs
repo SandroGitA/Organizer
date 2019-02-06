@@ -30,10 +30,10 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost("edit")]
-        public void Edit(string jsonString)//изменение записи в бд
+        public string Edit(string jsonString)//изменение записи в бд
         {
             EditRequest editRequest = new EditRequest();
-            editRequest.Edit(jsonString);
+            return editRequest.Edit(jsonString);
         }
     }
 }
