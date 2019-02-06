@@ -1,5 +1,4 @@
-﻿using System.Data.SqlClient;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace WebApplication1.Controllers
 {

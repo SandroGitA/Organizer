@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace WebApplication1.Controllers
 {
@@ -12,7 +8,7 @@ namespace WebApplication1.Controllers
         {
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение           
-            //парсим и записывыем в бд
+
             string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
