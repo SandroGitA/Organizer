@@ -25,10 +25,11 @@ namespace WebApplication1.Controllers
                 Connection = mySqlConnect,
             };
 
-            int countRows = cmd.ExecuteNonQuery();
+            //int countRows = cmd.ExecuteNonQuery();
 
             try
             {
+                int countRows = cmd.ExecuteNonQuery();
                 mySqlConnect.Close();
                 return "OK";
             }

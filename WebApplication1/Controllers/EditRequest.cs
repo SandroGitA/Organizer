@@ -18,8 +18,8 @@ namespace WebApplication1.Controllers
 
             MySqlCommand cmd = new MySqlCommand
             {
-                CommandText = string.Format("update organizer set dateBind = {0}, title = {1}, descr = {2}, isPin = {3}, isComplete = {4}", 
-                response.dateBind, response.title, response.descr, response.isPin, response.isComplete),
+                CommandText = string.Format("update organizer set dateBind = {0}, title = {1}, descr = {2}, isPin = {3}, isComplete = {4} where id = {5}", 
+                response.dateBind, response.title, response.descr, response.isPin, response.isComplete, response.id),
                 Connection = mySqlConnect
             };
 
