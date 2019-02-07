@@ -1,4 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WebApplication1.Controllers
 {
@@ -9,11 +12,16 @@ namespace WebApplication1.Controllers
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение           
 
+            dynamic json = JObject.Parse(jsonString);
+            var response = JsonConvert.DeserializeObject<Data>(jsonString);
+            
             string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
             {
-                CommandText = "INSERT INTO organizer (id, label, done, important) VALUES('"+ jsonString +"', '"+ 1 +"', '"+ 2 +"', '"+ 3 +"')",
+                CommandText = "INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete)" +
+                " VALUES('"+ response.id +"', '"+ response.dateBind +"', '"+ response.dateCreate +"'," +
+                " '"+ response.title +"', '"+ response.descr + "','"+ response.isPin +"', '"+ response.isComplete +"')",
                 Connection = mySqlConnect,
             };
 

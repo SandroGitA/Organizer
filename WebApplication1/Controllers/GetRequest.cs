@@ -24,11 +24,15 @@ namespace WebApplication1.Controllers
             while (reader.Read())
             {
                 object newID = reader.GetValue(0);
-                object newLabel = reader.GetValue(1);
-                object newDone = reader.GetValue(2);
-                object newImportant = reader.GetValue(3);
+                object newDateBind = reader.GetValue(1);
+                object newDateCreate = reader.GetValue(2);
+                object newTitle = reader.GetValue(3);
+                object newDescr = reader.GetValue(4);
+                object newIsPin = reader.GetValue(5);
+                object newIsComplete = reader.GetValue(6);
 
-                JsonData.Add(new Data() { id = newID, label = newLabel, done = newDone, important = newImportant });
+                JsonData.Add(new Data() { id = newID, dateBind = newDateBind, dateCreate = newDateCreate,
+                    title = newTitle, descr = newDescr, isPin = newIsPin, isComplete = newIsComplete });
             }
 
             mySqlConnect.Close();
@@ -36,38 +40,6 @@ namespace WebApplication1.Controllers
             string js = JsonConvert.SerializeObject(JsonData);
 
             return js;
-        }
-
-        /*public ActionResult<IEnumerable<string>> GetJson()//Отдаем данные клиенту
-        {           
-            List<Data> JsonData = new List<Data>();
-
-            Connect connect = new Connect();
-            MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение
-
-            MySqlCommand cmd = new MySqlCommand//запрос к БД
-            {
-                CommandText = "SELECT * FROM organizer",
-                Connection = mySqlConnect
-            };
-
-            MySqlDataReader reader = cmd.ExecuteReader();//читаем данные
-
-            while (reader.Read())
-            {
-                object newID = reader.GetValue(0);
-                object newLabel = reader.GetValue(1);
-                object newDone = reader.GetValue(2);
-                object newImportant = reader.GetValue(3);
-
-                JsonData.Add(new Data() { id = newID, label = newLabel, done = newDone, important = newImportant });
-            }
-
-            mySqlConnect.Close();
-
-            string js = JsonConvert.SerializeObject(JsonData);
-
-            return new string[] { js };
-        }*/
+        }       
     }
 }

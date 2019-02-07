@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace WebApplication1.Controllers
 {
@@ -12,8 +13,8 @@ namespace WebApplication1.Controllers
         {
             GetRequest getRequest = new GetRequest();
             return getRequest.GetJson();           
-        }       
-        
+        }             
+
         [HttpPost]
         public string Post(string jsonString)//Принимаем данные от клиента строкой, и парсим ее
         {
