@@ -1,4 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WebApplication1.Controllers
 {
@@ -9,11 +11,15 @@ namespace WebApplication1.Controllers
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение
 
+            dynamic json = JObject.Parse(jsonString);
+            var response = JsonConvert.DeserializeObject<Data>(jsonString);
+
             string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
             {
-                CommandText = string.Format("update organizer set label = {0}", jsonString),
+                CommandText = string.Format("update organizer set dateBind = {0}, title = {1}, descr = {2}, isPin = {3}, isComplete = {4}", 
+                response.dateBind, response.title, response.descr, response.isPin, response.isComplete),
                 Connection = mySqlConnect
             };
 
