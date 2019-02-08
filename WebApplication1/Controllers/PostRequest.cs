@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -14,7 +15,17 @@ namespace WebApplication1.Controllers
 
             dynamic json = JObject.Parse(jsonString);
             var response = JsonConvert.DeserializeObject<Data>(jsonString);
-            
+
+            if ((bool)response.isPin == true)
+                response.isPin = 1;
+            else if ((bool)response.isPin == false)
+                response.isPin = 0;
+
+            if ((bool)response.isComplete == true)
+                response.isComplete = 1;
+            else if ((bool)response.isComplete == false)
+                response.isComplete = 0;
+
             string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
