@@ -26,6 +26,10 @@ namespace WebApplication1.Controllers
             else if ((bool)response.isComplete == false)
                 response.isComplete = 0;
 
+            DateTime dateTime = new DateTime(1970, 1, 1);
+            TimeSpan timeSpan = TimeSpan.FromMilliseconds((double)response.dateBind);
+            dateTime += timeSpan;
+
             string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
