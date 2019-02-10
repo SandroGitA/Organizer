@@ -31,8 +31,8 @@ namespace WebApplication1.Controllers
             DateTime dateTime = new DateTime(1970, 1, 1);
             DateTime endDateTime = dateTime.AddHours(5);
 
-            responseJsonString.dateBind = endDateTime.Add(timeSpan);
-            responseJsonString.dateCreate = endDateTime.Add(timeSpan);
+            //responseJsonString.dateBind = endDateTime.Add(timeSpan);
+            //responseJsonString.dateCreate = endDateTime.Add(timeSpan);
 
             string dtBind = endDateTime.Add(timeSpan).ToString("yyyy.MM.dd HH:mm:ss");
             string dtCreate = endDateTime.Add(timeSpan).ToString("yyyy.MM.dd HH:mm:ss");
@@ -56,7 +56,7 @@ namespace WebApplication1.Controllers
             {
                 int countRows = cmd.ExecuteNonQuery();
                 mySqlConnect.Close();
-                return "OK";
+                return responseJsonString.id.ToString();
             }
             catch(MySqlException ex)
             {
