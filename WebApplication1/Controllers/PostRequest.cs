@@ -34,12 +34,18 @@ namespace WebApplication1.Controllers
             responseJsonString.dateBind = endDateTime.Add(timeSpan);
             responseJsonString.dateCreate = endDateTime.Add(timeSpan);
 
+            string dtBind = endDateTime.Add(timeSpan).ToString("yyyy.MM.dd HH:mm:ss");
+            string dtCreate = endDateTime.Add(timeSpan).ToString("yyyy.MM.dd HH:mm:ss");
+
+            int id = Guid.NewGuid().GetHashCode();
+            responseJsonString.id = id;
+
             string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
             {
                 CommandText = "INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete)" +
-                " VALUES('"+ responseJsonString.id +"', '"+ responseJsonString.dateBind +"', '"+ responseJsonString.dateCreate +"'," +
+                " VALUES('"+ responseJsonString.id +"', '"+  dtBind +"', '"+ dtCreate +"'," +
                 " '"+ responseJsonString.title +"', '"+ responseJsonString.descr + "','"+ responseJsonString.isPin +"', '"+ responseJsonString.isComplete +"')",
                 Connection = mySqlConnect,
             };
