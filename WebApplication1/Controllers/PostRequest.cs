@@ -13,30 +13,34 @@ namespace WebApplication1.Controllers
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение           
 
-            dynamic json = JObject.Parse(jsonString);
-            var response = JsonConvert.DeserializeObject<Data>(jsonString);
+            //dynamic json = JObject.Parse(jsonString);
+            Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
 
-            if ((bool)response.isPin == true)
-                response.isPin = 1;
-            else if ((bool)response.isPin == false)
-                response.isPin = 0;
+            if ((bool)responseJsonString.isPin == true)
+                responseJsonString.isPin = 1;
+            else if ((bool)responseJsonString.isPin == false)
+                responseJsonString.isPin = 0;
 
-            if ((bool)response.isComplete == true)
-                response.isComplete = 1;
-            else if ((bool)response.isComplete == false)
-                response.isComplete = 0;
+            if ((bool)responseJsonString.isComplete == true)
+                responseJsonString.isComplete = 1;
+            else if ((bool)responseJsonString.isComplete == false)
+                responseJsonString.isComplete = 0;           
 
+            double milliseconds = (long)responseJsonString.dateBind;
+            TimeSpan timeSpan = TimeSpan.FromMilliseconds(milliseconds);
             DateTime dateTime = new DateTime(1970, 1, 1);
-            TimeSpan timeSpan = TimeSpan.FromMilliseconds((double)response.dateBind);
-            dateTime += timeSpan;
+            DateTime endDateTime = dateTime.AddHours(5);
+
+            responseJsonString.dateBind = endDateTime.Add(timeSpan);
+            responseJsonString.dateCreate = endDateTime.Add(timeSpan);
 
             string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
             {
                 CommandText = "INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete)" +
-                " VALUES('"+ response.id +"', '"+ response.dateBind +"', '"+ response.dateCreate +"'," +
-                " '"+ response.title +"', '"+ response.descr + "','"+ response.isPin +"', '"+ response.isComplete +"')",
+                " VALUES('"+ responseJsonString.id +"', '"+ responseJsonString.dateBind +"', '"+ responseJsonString.dateCreate +"'," +
+                " '"+ responseJsonString.title +"', '"+ responseJsonString.descr + "','"+ responseJsonString.isPin +"', '"+ responseJsonString.isComplete +"')",
                 Connection = mySqlConnect,
             };
 
