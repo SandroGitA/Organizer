@@ -1134,7 +1134,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Razor.Design/2.2.0": {
+      "Microsoft.AspNetCore.Razor.Design/2.1.2": {
         "type": "package",
         "build": {
           "build/netstandard2.0/Microsoft.AspNetCore.Razor.Design.props": {}
@@ -1143,7 +1143,7 @@
           "buildMultiTargeting/Microsoft.AspNetCore.Razor.Design.props": {}
         }
       },
-      "Microsoft.AspNetCore.Razor.Language/2.1.1": {
+      "Microsoft.AspNetCore.Razor.Language/2.2.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
@@ -4674,7 +4674,7 @@
   },
   "libraries": {
     "Google.Protobuf/3.5.1": {
-      "sha512": "j/gbpRZ68sgvdi/vXI39Cj/jWG4d1dtDqfWbkjC9dErNWu/dFcIlq1LIgLscea+llZ6nzm06wz/JGziOegAL7Q==",
+      "sha512": "f2k1VNaB9bfvEsvARzzEL1TZiIpL33KKK3JMH7UANlPlJVptuvsk4qpBZEnz0pORWZOdUHlVwMQuUzFqjJYCxA==",
       "type": "package",
       "path": "google.protobuf/3.5.1",
       "files": [
@@ -4689,7 +4689,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
-      "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
+      "sha512": "AIgEc1up4pvH8kXy+eG1x4Qfqd6piAq3yk11pveCQXWNkkYoiKdflSmcJZuWcerdMcAaoF0xC/mWGoTW4vF4Dg==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.client/5.2.6",
       "files": [
@@ -5521,10 +5521,10 @@
         "microsoft.aspnetcore.razor.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Razor.Design/2.2.0": {
-      "sha512": "qslnmDEaFHn7ok+xWsqq4YwdKuVIBUV1PAym3OdfXXmMAyI034d5QWPloGDz/i2K2iK3BcFn4qDoBX+xEBAfAg==",
+    "Microsoft.AspNetCore.Razor.Design/2.1.2": {
+      "sha512": "ab4+TZw3Sxqrr5TwrwVyABeQkhSxYMJXgG6yZw7T+r6Vz+hcOt+pK79o15ESG7kZvWAK9wRG7emnTIia5O6R1Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.razor.design/2.2.0",
+      "path": "microsoft.aspnetcore.razor.design/2.1.2",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -5532,8 +5532,10 @@
         "build/netstandard2.0/Microsoft.AspNetCore.Razor.Design.CodeGeneration.targets",
         "build/netstandard2.0/Microsoft.AspNetCore.Razor.Design.props",
         "buildMultiTargeting/Microsoft.AspNetCore.Razor.Design.props",
-        "microsoft.aspnetcore.razor.design.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.razor.design.2.1.2.nupkg.sha512",
         "microsoft.aspnetcore.razor.design.nuspec",
+        "tasks/net46/Microsoft.AspNetCore.Razor.Tasks.dll",
+        "tasks/netstandard2.0/Microsoft.AspNetCore.Razor.Tasks.dll",
         "tools/Microsoft.AspNetCore.Razor.Language.dll",
         "tools/Microsoft.CodeAnalysis.CSharp.dll",
         "tools/Microsoft.CodeAnalysis.Razor.dll",
@@ -5546,17 +5548,18 @@
         "tools/rzc.runtimeconfig.json"
       ]
     },
-    "Microsoft.AspNetCore.Razor.Language/2.1.1": {
-      "sha512": "5HX7/SguN9F8cdJ6GBBFJauEii/k6XPuI1gHucOcOBKKetgm4nG/xrHzRGSBTxmc1rbCcVKrBl10/PYItE7JyA==",
+    "Microsoft.AspNetCore.Razor.Language/2.2.0": {
+      "sha512": "IeyzVFXZdpUAnWKWoNYE0SsP1Eu7JLjZaC94jaI1VfGtK57QykROz/iGMc8D0VcqC8i02qYTPQN/wPKm6PfidA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.razor.language/2.1.1",
+      "path": "microsoft.aspnetcore.razor.language/2.2.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/net46/Microsoft.AspNetCore.Razor.Language.dll",
         "lib/net46/Microsoft.AspNetCore.Razor.Language.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.xml",
-        "microsoft.aspnetcore.razor.language.2.1.1.nupkg.sha512",
+        "microsoft.aspnetcore.razor.language.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.razor.language.nuspec"
       ]
     },
@@ -7585,7 +7588,7 @@
       ]
     },
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -8405,7 +8408,7 @@
       ]
     },
     "System.Configuration.ConfigurationManager/4.4.1": {
-      "sha512": "LoSjM/kLDpyLyoGsmwS5oVMRzHf/0XHkRpr3QZu/HuAv6Sfk919usTMLqD9N9VK3S4Q2+bd3tKJ0ko4MYFfq4Q==",
+      "sha512": "jz3TWKMAeuDEyrPCK5Jyt4bzQcmzUIMcY9Ud6PkElFxTfnsihV+9N/UCqvxe1z5gc7jMYAnj7V1COMS9QKIuHQ==",
       "type": "package",
       "path": "system.configuration.configurationmanager/4.4.1",
       "files": [
@@ -11294,7 +11297,7 @@
       ]
     },
     "System.Security.Cryptography.ProtectedData/4.4.0": {
-      "sha512": "WwEexvBd+17yfY7fcS+fBGl+HADEfCJuKeDJqBT7D6j6vKwYvfLyGuq2y/MmrKORC6mbYwth7kjinO1mPhTL3g==",
+      "sha512": "cJV7ScGW7EhatRsjehfvvYVBvtiSMKgN8bOVI0bQhnF5bU7vnHVIsH49Kva7i7GWaWYvmEzkYVk1TC+gZYBEog==",
       "type": "package",
       "path": "system.security.cryptography.protecteddata/4.4.0",
       "files": [
@@ -12429,7 +12432,8 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNetCore.App >= 2.1.1",
-      "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
+      "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
+      "Microsoft.AspNetCore.Razor.Language >= 2.2.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.7",
       "MySql.Data >= 8.0.15",
@@ -12486,6 +12490,10 @@
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",
             "target": "Package",
+            "version": "[2.1.2, )"
+          },
+          "Microsoft.AspNetCore.Razor.Language": {
+            "target": "Package",
             "version": "[2.2.0, )"
           },
           "Microsoft.NETCore.App": {
@@ -12519,8 +12527,8 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Версия обнаруженного пакета нарушает ограничение зависимости: Microsoft.AspNetCore.App 2.1.1 требуется Microsoft.AspNetCore.Razor.Design (>= 2.1.1 && < 2.2.0), но в результате разрешения получена версия Microsoft.AspNetCore.Razor.Design 2.2.0.",
-      "libraryId": "Microsoft.AspNetCore.Razor.Design",
+      "message": "Версия обнаруженного пакета нарушает ограничение зависимости: Microsoft.AspNetCore.App 2.1.1 требуется Microsoft.AspNetCore.Razor.Language (>= 2.1.1 && < 2.2.0), но в результате разрешения получена версия Microsoft.AspNetCore.Razor.Language 2.2.0.",
+      "libraryId": "Microsoft.AspNetCore.Razor.Language",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.1"
       ]

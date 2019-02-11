@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "cb5932a006ea140256ef8ebd710cb3266ab2983a"
+    "signature": "a967665a98ecea458b4122548d8e5c18895666c4"
   },
   "compilationOptions": {
     "defines": [
@@ -25,7 +25,8 @@
       "WebApplication1/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.1.1",
-          "Microsoft.AspNetCore.Razor.Design": "2.2.0",
+          "Microsoft.AspNetCore.Razor.Design": "2.1.2",
+          "Microsoft.AspNetCore.Razor.Language": "2.2.0",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.7",
           "MySql.Data": "8.0.15",
@@ -52,7 +53,18 @@
           "lib/netstandard1.0/Google.Protobuf.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Razor.Design/2.2.0": {},
+      "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
+      "Microsoft.AspNetCore.Razor.Language/2.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
+        }
+      },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
@@ -329,7 +341,7 @@
       },
       "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.1.7": {
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "2.1.1",
+          "Microsoft.AspNetCore.Razor.Language": "2.2.0",
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Utils": "2.1.7"
         },
@@ -704,8 +716,8 @@
           "Microsoft.AspNetCore.NodeServices": "2.1.1",
           "Microsoft.AspNetCore.Owin": "2.1.1",
           "Microsoft.AspNetCore.Razor": "2.1.1",
-          "Microsoft.AspNetCore.Razor.Design": "2.2.0",
-          "Microsoft.AspNetCore.Razor.Language": "2.1.1",
+          "Microsoft.AspNetCore.Razor.Design": "2.1.2",
+          "Microsoft.AspNetCore.Razor.Language": "2.2.0",
           "Microsoft.AspNetCore.Razor.Runtime": "2.1.1",
           "Microsoft.AspNetCore.ResponseCaching": "2.1.1",
           "Microsoft.AspNetCore.ResponseCaching.Abstractions": "2.1.1",
@@ -1290,7 +1302,7 @@
           "Microsoft.AspNetCore.Mvc.RazorPages": "2.1.1",
           "Microsoft.AspNetCore.Mvc.TagHelpers": "2.1.1",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.1.1",
-          "Microsoft.AspNetCore.Razor.Design": "2.2.0",
+          "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.Extensions.Caching.Memory": "2.1.1",
           "Microsoft.Extensions.DependencyInjection": "2.1.1"
         },
@@ -1412,7 +1424,7 @@
       },
       "Microsoft.AspNetCore.Mvc.Razor.Extensions/2.1.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "2.1.1",
+          "Microsoft.AspNetCore.Razor.Language": "2.2.0",
           "Microsoft.CodeAnalysis.Razor": "2.1.1"
         },
         "compile": {
@@ -1492,12 +1504,6 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.AspNetCore.Razor.Language/2.1.1": {
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
         },
         "compileOnly": true
       },
@@ -1853,7 +1859,7 @@
       },
       "Microsoft.CodeAnalysis.Razor/2.1.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.Razor.Language": "2.1.1",
+          "Microsoft.AspNetCore.Razor.Language": "2.2.0",
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
           "Microsoft.CodeAnalysis.Common": "2.8.0"
         },
@@ -3536,16 +3542,23 @@
     "Google.Protobuf/3.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-j/gbpRZ68sgvdi/vXI39Cj/jWG4d1dtDqfWbkjC9dErNWu/dFcIlq1LIgLscea+llZ6nzm06wz/JGziOegAL7Q==",
+      "sha512": "sha512-f2k1VNaB9bfvEsvARzzEL1TZiIpL33KKK3JMH7UANlPlJVptuvsk4qpBZEnz0pORWZOdUHlVwMQuUzFqjJYCxA==",
       "path": "google.protobuf/3.5.1",
       "hashPath": "google.protobuf.3.5.1.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Razor.Design/2.2.0": {
+    "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qslnmDEaFHn7ok+xWsqq4YwdKuVIBUV1PAym3OdfXXmMAyI034d5QWPloGDz/i2K2iK3BcFn4qDoBX+xEBAfAg==",
-      "path": "microsoft.aspnetcore.razor.design/2.2.0",
-      "hashPath": "microsoft.aspnetcore.razor.design.2.2.0.nupkg.sha512"
+      "sha512": "sha512-ab4+TZw3Sxqrr5TwrwVyABeQkhSxYMJXgG6yZw7T+r6Vz+hcOt+pK79o15ESG7kZvWAK9wRG7emnTIia5O6R1Q==",
+      "path": "microsoft.aspnetcore.razor.design/2.1.2",
+      "hashPath": "microsoft.aspnetcore.razor.design.2.1.2.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Razor.Language/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IeyzVFXZdpUAnWKWoNYE0SsP1Eu7JLjZaC94jaI1VfGtK57QykROz/iGMc8D0VcqC8i02qYTPQN/wPKm6PfidA==",
+      "path": "microsoft.aspnetcore.razor.language/2.2.0",
+      "hashPath": "microsoft.aspnetcore.razor.language.2.2.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
@@ -3676,7 +3689,7 @@
     "Newtonsoft.Json/12.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
     },
@@ -3732,7 +3745,7 @@
     "System.Configuration.ConfigurationManager/4.4.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LoSjM/kLDpyLyoGsmwS5oVMRzHf/0XHkRpr3QZu/HuAv6Sfk919usTMLqD9N9VK3S4Q2+bd3tKJ0ko4MYFfq4Q==",
+      "sha512": "sha512-jz3TWKMAeuDEyrPCK5Jyt4bzQcmzUIMcY9Ud6PkElFxTfnsihV+9N/UCqvxe1z5gc7jMYAnj7V1COMS9QKIuHQ==",
       "path": "system.configuration.configurationmanager/4.4.1",
       "hashPath": "system.configuration.configurationmanager.4.4.1.nupkg.sha512"
     },
@@ -3746,14 +3759,14 @@
     "System.Security.Cryptography.ProtectedData/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WwEexvBd+17yfY7fcS+fBGl+HADEfCJuKeDJqBT7D6j6vKwYvfLyGuq2y/MmrKORC6mbYwth7kjinO1mPhTL3g==",
+      "sha512": "sha512-cJV7ScGW7EhatRsjehfvvYVBvtiSMKgN8bOVI0bQhnF5bU7vnHVIsH49Kva7i7GWaWYvmEzkYVk1TC+gZYBEog==",
       "path": "system.security.cryptography.protecteddata/4.4.0",
       "hashPath": "system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
+      "sha512": "sha512-AIgEc1up4pvH8kXy+eG1x4Qfqd6piAq3yk11pveCQXWNkkYoiKdflSmcJZuWcerdMcAaoF0xC/mWGoTW4vF4Dg==",
       "path": "microsoft.aspnet.webapi.client/5.2.6",
       "hashPath": "microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512"
     },
@@ -4225,13 +4238,6 @@
       "sha512": "sha512-oDxJTufrOF2Y7g+p2jU5+2xtrcsb3KX20pH/KosLW5rbsJMAqaOwprI6gJlBQCGtMCYl/MbnC45ZObPmzyI0NQ==",
       "path": "microsoft.aspnetcore.razor/2.1.1",
       "hashPath": "microsoft.aspnetcore.razor.2.1.1.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.Razor.Language/2.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5HX7/SguN9F8cdJ6GBBFJauEii/k6XPuI1gHucOcOBKKetgm4nG/xrHzRGSBTxmc1rbCcVKrBl10/PYItE7JyA==",
-      "path": "microsoft.aspnetcore.razor.language/2.1.1",
-      "hashPath": "microsoft.aspnetcore.razor.language.2.1.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Runtime/2.1.1": {
       "type": "package",
