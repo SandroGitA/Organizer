@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
         static readonly string server = "localhost";
         static readonly string charset = "utf8";
 
-        static readonly string connectionString = "server = " + server + "; user = " + user + "; database = " + database + "; port = " + port + "; password = " + password + "; charset = " + charset;
+        static readonly string connectionString = $"server = {server}; user = {user}; database = {database}; port = {port}; password = {password}; charset = {charset}";
         string connectStatus = "";
 
         public MySqlConnection SqlConnect()
