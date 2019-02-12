@@ -44,8 +44,8 @@ namespace WebApplication1.Controllers
 
             MySqlCommand cmd = new MySqlCommand
             {               
-                CommandText = $"INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete) values({responseJsonString.id},{dtBind},{dtCreate}," +
-                $"{responseJsonString.title},{responseJsonString.descr},{responseJsonString.isPin},{responseJsonString.isComplete})",
+                CommandText = $"INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete) values('{responseJsonString.id}','{dtBind}','{dtCreate}'," +
+                $"'{responseJsonString.title}','{responseJsonString.descr}','{responseJsonString.isPin}','{responseJsonString.isComplete}')",
                 Connection = mySqlConnect,
             };
 
