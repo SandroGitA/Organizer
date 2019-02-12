@@ -27,7 +27,7 @@ namespace WebApplication1.Controllers
 
             MySqlCommand cmd = new MySqlCommand
             {
-                CommandText = $"update organizer set dateBind = {responseJsonString.dateBind}, title = {responseJsonString.title}, " +
+                CommandText = $"update organizer set title = {responseJsonString.title}, " +
                 $"descr = {responseJsonString.descr}, isPin = {responseJsonString.isPin}, " +
                 $"isComplete = {responseJsonString.isComplete} where id = {responseJsonString.id}",
                 Connection = mySqlConnect
