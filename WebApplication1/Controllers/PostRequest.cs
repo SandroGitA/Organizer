@@ -13,7 +13,6 @@ namespace WebApplication1.Controllers
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение           
 
-            //dynamic json = JObject.Parse(jsonString);
             Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
 
             if ((bool)responseJsonString.isPin == true)
