@@ -11,16 +11,25 @@ namespace WebApplication1.Controllers
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение
 
-            dynamic json = JObject.Parse(jsonString);
-            var response = JsonConvert.DeserializeObject<Data>(jsonString);
+            Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
+
+            if ((bool)responseJsonString.isPin == true)
+                responseJsonString.isPin = 1;
+            else if ((bool)responseJsonString.isPin == false)
+                responseJsonString.isPin = 0;
+
+            if ((bool)responseJsonString.isComplete == true)
+                responseJsonString.isComplete = 1;
+            else if ((bool)responseJsonString.isComplete == false)
+                responseJsonString.isComplete = 0;
 
             string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
             {
-                CommandText = $"update organizer set dateBind = {response.dateBind}, title = {response.title}, " +
-                $"descr = {response.descr}, isPin = {response.isPin}, " +
-                $"isComplete = {response.isComplete} where id = {response.id}",
+                CommandText = $"update organizer set dateBind = {responseJsonString.dateBind}, title = {responseJsonString.title}, " +
+                $"descr = {responseJsonString.descr}, isPin = {responseJsonString.isPin}, " +
+                $"isComplete = {responseJsonString.isComplete} where id = {responseJsonString.id}",
                 Connection = mySqlConnect
             };
 

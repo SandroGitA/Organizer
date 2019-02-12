@@ -30,9 +30,6 @@ namespace WebApplication1.Controllers
             DateTime dateTime = new DateTime(1970, 1, 1);
             DateTime endDateTime = dateTime.AddHours(5);
 
-            //responseJsonString.dateBind = endDateTime.Add(timeSpan);
-            //responseJsonString.dateCreate = endDateTime.Add(timeSpan);
-
             string dtBind = endDateTime.Add(timeSpan).ToString("yyyy.MM.dd HH:mm:ss");
             string dtCreate = endDateTime.Add(timeSpan).ToString("yyyy.MM.dd HH:mm:ss");
 
@@ -43,8 +40,10 @@ namespace WebApplication1.Controllers
 
             MySqlCommand cmd = new MySqlCommand
             {               
-                CommandText = $"INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete) values('{responseJsonString.id}','{dtBind}','{dtCreate}'," +
-                $"'{responseJsonString.title}','{responseJsonString.descr}','{responseJsonString.isPin}','{responseJsonString.isComplete}')",
+                CommandText = $"INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete) " +
+                $"values('{responseJsonString.id}','{dtBind}','{dtCreate}'," +
+                $"'{responseJsonString.title}','{responseJsonString.descr}','{responseJsonString.isPin}'," +
+                $"'{responseJsonString.isComplete}')",
                 Connection = mySqlConnect,
             };
 
