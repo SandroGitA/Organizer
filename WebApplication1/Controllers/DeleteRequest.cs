@@ -13,7 +13,7 @@ namespace WebApplication1.Controllers
 
             MySqlCommand cmd = new MySqlCommand
             {
-                CommandText = string.Format("delete from organizer where id = {0}", id),
+                CommandText = $"delete from organizer where id = {id}",
                 Connection = mySqlConnect
             };
 
