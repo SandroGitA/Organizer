@@ -13,15 +13,9 @@ namespace WebApplication1.Controllers
 
             Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
 
-            if ((bool)responseJsonString.isPin == true)
-                responseJsonString.isPin = 1;
-            else if ((bool)responseJsonString.isPin == false)
-                responseJsonString.isPin = 0;
-
-            if ((bool)responseJsonString.isComplete == true)
-                responseJsonString.isComplete = 1;
-            else if ((bool)responseJsonString.isComplete == false)
-                responseJsonString.isComplete = 0;
+            BuildBoolData buildBoolData = new BuildBoolData();
+            responseJsonString.isPin = buildBoolData.Build(responseJsonString.isPin);
+            responseJsonString.isComplete = buildBoolData.Build(responseJsonString.isComplete);
 
             string cmdStatus = "";
 
