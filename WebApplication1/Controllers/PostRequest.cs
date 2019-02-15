@@ -15,9 +15,8 @@ namespace WebApplication1.Controllers
 
             Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
 
-            ConvertBoolField convertBoolField = new ConvertBoolField();
-            responseJsonString.isPin = convertBoolField.Build(responseJsonString.isPin);
-            responseJsonString.isComplete = convertBoolField.Build(responseJsonString.isComplete);    
+            responseJsonString.isPin = ConvertBoolField.Build(responseJsonString.isPin);
+            responseJsonString.isComplete = ConvertBoolField.Build(responseJsonString.isComplete);
 
             double milliseconds = (long)responseJsonString.dateBind;
             TimeSpan timeSpan = TimeSpan.FromMilliseconds(milliseconds);

@@ -11,11 +11,10 @@ namespace WebApplication1.Controllers
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение
 
-            Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
+            Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);            
 
-            ConvertBoolField convertBoolField = new ConvertBoolField();
-            responseJsonString.isPin = convertBoolField.Build(responseJsonString.isPin);
-            responseJsonString.isComplete = convertBoolField.Build(responseJsonString.isComplete);
+            responseJsonString.isPin = ConvertBoolField.Build(responseJsonString.isPin);
+            responseJsonString.isComplete = ConvertBoolField.Build(responseJsonString.isComplete);
 
             string cmdStatus = "";
 
