@@ -15,9 +15,9 @@ namespace WebApplication1.Controllers
 
             Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
 
-            BuildBoolData buildBoolData = new BuildBoolData();
-            responseJsonString.isPin = buildBoolData.Build(responseJsonString.isPin);
-            responseJsonString.isComplete = buildBoolData.Build(responseJsonString.isComplete);    
+            ConvertBoolField convertBoolField = new ConvertBoolField();
+            responseJsonString.isPin = convertBoolField.Build(responseJsonString.isPin);
+            responseJsonString.isComplete = convertBoolField.Build(responseJsonString.isComplete);    
 
             double milliseconds = (long)responseJsonString.dateBind;
             TimeSpan timeSpan = TimeSpan.FromMilliseconds(milliseconds);
@@ -40,8 +40,6 @@ namespace WebApplication1.Controllers
                 $"'{responseJsonString.isComplete}')",
                 Connection = mySqlConnect,
             };
-
-            //int countRows = cmd.ExecuteNonQuery();
 
             try
             {

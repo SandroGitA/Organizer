@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Controllers
 {
-    public class BuildBoolData
+    public class ConvertBoolField
     {
         public object Build(object fieldInData)
         {

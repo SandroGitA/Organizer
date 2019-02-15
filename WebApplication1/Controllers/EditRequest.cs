@@ -13,9 +13,9 @@ namespace WebApplication1.Controllers
 
             Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
 
-            BuildBoolData buildBoolData = new BuildBoolData();
-            responseJsonString.isPin = buildBoolData.Build(responseJsonString.isPin);
-            responseJsonString.isComplete = buildBoolData.Build(responseJsonString.isComplete);
+            ConvertBoolField convertBoolField = new ConvertBoolField();
+            responseJsonString.isPin = convertBoolField.Build(responseJsonString.isPin);
+            responseJsonString.isComplete = convertBoolField.Build(responseJsonString.isComplete);
 
             string cmdStatus = "";
 
