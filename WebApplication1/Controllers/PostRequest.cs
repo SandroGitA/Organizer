@@ -18,13 +18,8 @@ namespace WebApplication1.Controllers
             responseJsonString.isPin = ConvertBoolField.Build(responseJsonString.isPin);
             responseJsonString.isComplete = ConvertBoolField.Build(responseJsonString.isComplete);
 
-            double milliseconds = (long)responseJsonString.dateBind;
-            TimeSpan timeSpan = TimeSpan.FromMilliseconds(milliseconds);
-            DateTime dateTime = new DateTime(1970, 1, 1);
-            DateTime endDateTime = dateTime.AddHours(5);
-
-            string dtBind = endDateTime.Add(timeSpan).ToString("yyyy.MM.dd HH:mm:ss");
-            string dtCreate = endDateTime.Add(timeSpan).ToString("yyyy.MM.dd HH:mm:ss");
+            string dtBind = ConvertDataField.Convert(responseJsonString.dateBind);
+            string dtCreate = ConvertDataField.Convert(responseJsonString.dateCreate);           
 
             int id = Guid.NewGuid().GetHashCode();
             responseJsonString.id = id;
