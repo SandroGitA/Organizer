@@ -7,7 +7,7 @@ namespace WebApplication1.Controllers
 {
     public class ConvertBoolField
     {
-        public static object Build(object fieldInData)
+        public static object Convert(object fieldInData)
         {
             if ((bool)fieldInData == true)
                 return fieldInData = 1;

@@ -15,8 +15,8 @@ namespace WebApplication1.Controllers
 
             Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
 
-            responseJsonString.isPin = ConvertBoolField.Build(responseJsonString.isPin);
-            responseJsonString.isComplete = ConvertBoolField.Build(responseJsonString.isComplete);
+            responseJsonString.isPin = ConvertBoolField.Convert(responseJsonString.isPin);
+            responseJsonString.isComplete = ConvertBoolField.Convert(responseJsonString.isComplete);
 
             string dtBind = ConvertDataField.Convert(responseJsonString.dateBind);
             string dtCreate = ConvertDataField.Convert(responseJsonString.dateCreate);           
