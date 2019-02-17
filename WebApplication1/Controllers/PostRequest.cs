@@ -18,18 +18,17 @@ namespace WebApplication1.Controllers
             responseJsonString.isPin = ConvertBoolField.Convert(responseJsonString.isPin);
             responseJsonString.isComplete = ConvertBoolField.Convert(responseJsonString.isComplete);
 
-            string dtBind = ConvertDataField.Convert(responseJsonString.dateBind);
-            string dtCreate = ConvertDataField.Convert(responseJsonString.dateCreate);           
+            string dateBind = ConvertDataField.Convert(responseJsonString.dateBind);
+            string dateCreate = ConvertDataField.Convert(responseJsonString.dateCreate);
 
-            int id = Guid.NewGuid().GetHashCode();
-            responseJsonString.id = id;
+            responseJsonString.id = Guid.NewGuid().GetHashCode();
 
             string cmdStatus = "";
 
             MySqlCommand cmd = new MySqlCommand
             {               
                 CommandText = $"INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete) " +
-                $"values('{responseJsonString.id}','{dtBind}','{dtCreate}'," +
+                $"values('{responseJsonString.id}','{dateBind}','{dateCreate}'," +
                 $"'{responseJsonString.title}','{responseJsonString.descr}','{responseJsonString.isPin}'," +
                 $"'{responseJsonString.isComplete}')",
                 Connection = mySqlConnect,
