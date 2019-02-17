@@ -11,10 +11,8 @@ namespace WebApplication1.Controllers
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();
 
-            Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);            
-
-            responseJsonString.isPin = ConvertBoolField.Convert(responseJsonString.isPin);
-            responseJsonString.isComplete = ConvertBoolField.Convert(responseJsonString.isComplete);
+            BuildDataObject buildDataObject = new BuildDataObject();
+            Data responseJsonString = buildDataObject.BuildData(jsonString);           
 
             MySqlCommand cmd = new MySqlCommand
             {
