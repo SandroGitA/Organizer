@@ -23,8 +23,6 @@ namespace WebApplication1.Controllers
 
             responseJsonString.id = Guid.NewGuid().GetHashCode();
 
-            string cmdStatus = "";
-
             MySqlCommand cmd = new MySqlCommand
             {               
                 CommandText = $"INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete) " +
@@ -42,7 +40,7 @@ namespace WebApplication1.Controllers
             }
             catch(MySqlException ex)
             {
-                cmdStatus = ex.Message;
+                string cmdStatus = ex.Message;
                 mySqlConnect.Close();
                 return "Error: " + cmdStatus;
             }

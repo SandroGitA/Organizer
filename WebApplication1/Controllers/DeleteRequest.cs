@@ -9,8 +9,6 @@ namespace WebApplication1.Controllers
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();
 
-            string cmdStatus = "";
-
             MySqlCommand cmd = new MySqlCommand
             {
                 CommandText = $"delete from organizer where id = {id}",
@@ -25,7 +23,7 @@ namespace WebApplication1.Controllers
             }
             catch (MySqlException ex)
             {
-                cmdStatus = ex.Message;
+                string cmdStatus = ex.Message;
                 mySqlConnect.Close();
                 return cmdStatus;
             }

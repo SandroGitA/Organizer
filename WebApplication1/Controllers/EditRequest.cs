@@ -16,8 +16,6 @@ namespace WebApplication1.Controllers
             responseJsonString.isPin = ConvertBoolField.Convert(responseJsonString.isPin);
             responseJsonString.isComplete = ConvertBoolField.Convert(responseJsonString.isComplete);
 
-            string cmdStatus = "";
-
             MySqlCommand cmd = new MySqlCommand
             {
                 CommandText = $"update organizer set title = '{responseJsonString.title}', " +
@@ -34,7 +32,7 @@ namespace WebApplication1.Controllers
             }
             catch (MySqlException ex)
             {
-                cmdStatus = ex.Message;
+                string cmdStatus = ex.Message;
                 mySqlConnect.Close();
                 return cmdStatus;
             }
