@@ -11,7 +11,7 @@ namespace WebApplication1.Controllers
         public string PostJson(string jsonString)
         {
             Connect connect = new Connect();
-            MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение           
+            MySqlConnection mySqlConnect = connect.SqlConnect();
 
             Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);
 
