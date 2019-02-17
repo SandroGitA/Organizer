@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
             MySqlCommand cmd = new MySqlCommand
             {               
                 CommandText = $"INSERT INTO organizer (id, dateBind, dateCreate, title, descr, isPin, isComplete) " +
-                $"values('{responseJsonString.id}','{buildDataObject.dateBind}','{buildDataObject.dateCreate}'," +
+                $"values('{responseJsonString.id}','{responseJsonString.dateBind}','{responseJsonString.dateCreate}'," +
                 $"'{responseJsonString.title}','{responseJsonString.descr}','{responseJsonString.isPin}'," +
                 $"'{responseJsonString.isComplete}')",
                 Connection = mySqlConnect,

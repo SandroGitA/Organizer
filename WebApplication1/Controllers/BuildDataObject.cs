@@ -8,9 +8,6 @@ namespace WebApplication1.Controllers
 {
     public class BuildDataObject
     {
-        public string dateBind;
-        public string dateCreate;
-
         public Data BuildData(string dataString)
         {
             Data responseJsonString = JsonConvert.DeserializeObject<Data>(dataString);
