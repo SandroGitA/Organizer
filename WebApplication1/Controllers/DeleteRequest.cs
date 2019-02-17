@@ -7,7 +7,7 @@ namespace WebApplication1.Controllers
         public string Delete(int id)
         {
             Connect connect = new Connect();
-            MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение
+            MySqlConnection mySqlConnect = connect.SqlConnect();
 
             string cmdStatus = "";
 
@@ -16,11 +16,10 @@ namespace WebApplication1.Controllers
                 CommandText = $"delete from organizer where id = {id}",
                 Connection = mySqlConnect
             };
-
-            int countRows = cmd.ExecuteNonQuery();
-
+            
             try
             {
+                int countRows = cmd.ExecuteNonQuery();
                 mySqlConnect.Close();
                 return "Delete!";
             }

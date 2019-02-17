@@ -11,15 +11,15 @@ namespace WebApplication1.Controllers
             List<Data> JsonData = new List<Data>();
 
             Connect connect = new Connect();
-            MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение
+            MySqlConnection mySqlConnect = connect.SqlConnect();
 
-            MySqlCommand cmd = new MySqlCommand//запрос к БД
+            MySqlCommand cmd = new MySqlCommand
             {
                 CommandText = "SELECT * FROM organizer",
                 Connection = mySqlConnect
             };
 
-            MySqlDataReader reader = cmd.ExecuteReader();//читаем данные
+            MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {

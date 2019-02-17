@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
         public string Edit(string jsonString)
         {
             Connect connect = new Connect();
-            MySqlConnection mySqlConnect = connect.SqlConnect();//объект, который открывает соединение
+            MySqlConnection mySqlConnect = connect.SqlConnect();
 
             Data responseJsonString = JsonConvert.DeserializeObject<Data>(jsonString);            
 
@@ -25,11 +25,10 @@ namespace WebApplication1.Controllers
                 $"isComplete = '{responseJsonString.isComplete}' where id = '{responseJsonString.id}'",
                 Connection = mySqlConnect
             };
-
-            int countRows = cmd.ExecuteNonQuery();
-
+          
             try
             {
+                int countRows = cmd.ExecuteNonQuery();
                 mySqlConnect.Close();
                 return "Edit!";
             }
