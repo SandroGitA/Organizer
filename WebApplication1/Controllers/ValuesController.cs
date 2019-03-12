@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
 
 namespace WebApplication1.Controllers
 {
@@ -9,28 +8,28 @@ namespace WebApplication1.Controllers
     public class ValuesController : ControllerBase
     {        
         [HttpGet]
-        public string Get()//Отдаем данные клиенту
+        public string Get()
         {
             GetRequest getRequest = new GetRequest();
             return getRequest.GetJson();           
         }             
 
         [HttpPost]
-        public string Post(string jsonString)//Принимаем данные от клиента строкой, и парсим ее
+        public string Post(string jsonString)
         {
             PostRequest postRequest = new PostRequest();
             return postRequest.PostJson(jsonString);
         }
 
         [HttpPost("delete")]
-        public string Delete(int id)//удаление записи по ID
+        public string Delete(int id)
         {
             DeleteRequest deleteRequest = new DeleteRequest();
             return deleteRequest.Delete(id);
         }
 
         [HttpPost("edit")]
-        public string Edit(string jsonString)//изменение записи в бд
+        public string Edit(string jsonString)
         {
             EditRequest editRequest = new EditRequest();
             return editRequest.Edit(jsonString);
