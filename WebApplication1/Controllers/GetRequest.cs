@@ -36,10 +36,8 @@ namespace WebApplication1.Controllers
             }
 
             mySqlConnect.Close();
-
-            string js = JsonConvert.SerializeObject(JsonData);
-
-            return js;
+ 
+            return JsonConvert.SerializeObject(JsonData);
         }       
     }
 }
