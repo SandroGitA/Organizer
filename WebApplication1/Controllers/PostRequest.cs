@@ -11,7 +11,7 @@ namespace WebApplication1.Controllers
         public string PostJson(string jsonString)
         {
             if (jsonString == null)
-                return "Data error";
+                return "Invalid data format";
             else
             {
                 Connect connect = new Connect();
@@ -33,13 +33,15 @@ namespace WebApplication1.Controllers
                 {
                     int countRows = cmd.ExecuteNonQuery();
                     mySqlConnect.Close();
-                    return responseJsonString.id.ToString();
+                    //return responseJsonString.id.ToString();
+                    return "201";
                 }
                 catch (MySqlException ex)
                 {
                     string cmdStatus = ex.Message;
                     mySqlConnect.Close();
-                    return "Error: " + cmdStatus;
+                    //return "Error: " + cmdStatus;
+                    return "501";
                 }
             }
         }
