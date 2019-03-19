@@ -14,6 +14,7 @@ namespace WebApplication1.Controllers
             else
             {
                 DateTime dt = DateTime.Parse(date.ToString());
+                dt = dt.AddHours(5);
                 return dt.ToString("yyyy.MM.dd HH:mm:ss");
             }
         }
