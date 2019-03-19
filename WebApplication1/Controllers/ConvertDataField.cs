@@ -7,13 +7,10 @@ namespace WebApplication1.Controllers
 {
     public class ConvertDataField
     {
-        public static string Convert(object milliseconds)
+        public static string Convert(object date)
         {
-            double mlsc = (long)milliseconds;
-            TimeSpan timeSpan = TimeSpan.FromMilliseconds(mlsc);
-            DateTime dateTime = new DateTime(1970, 1, 1);
-            DateTime endDateTime = dateTime.AddHours(5);
-            return endDateTime.Add(timeSpan).ToString("yyyy.MM.dd HH:mm:ss");
+            DateTime dt = DateTime.Parse(date.ToString());
+            return dt.ToString("yyyy.MM.dd HH:mm:ss");
         }
     }
 }
