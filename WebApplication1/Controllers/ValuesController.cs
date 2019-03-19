@@ -1,9 +1,4 @@
-﻿using System;
-using System.IO;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.JsonPatch;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
