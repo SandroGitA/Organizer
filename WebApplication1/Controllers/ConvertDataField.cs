@@ -10,7 +10,7 @@ namespace WebApplication1.Controllers
         public static string Convert(object date)
         {
             if (date == null)
-                return "";
+                return null;
             else
             {
                 DateTime dt = DateTime.Parse(date.ToString());
