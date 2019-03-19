@@ -8,7 +8,7 @@ namespace WebApplication1.Controllers
     {
         public string GetJson()
         {
-            List<Data> JsonData = new List<Data>();
+            List<newTask> JsonData = new List<newTask>();
 
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();
@@ -31,7 +31,7 @@ namespace WebApplication1.Controllers
                 object newIsPin = reader.GetValue(5);
                 object newIsComplete = reader.GetValue(6);
 
-                JsonData.Add(new Data() { id = newID, dateBind = newDateBind, dateCreate = newDateCreate,
+                JsonData.Add(new newTask() { id = newID, dateBind = newDateBind, dateCreate = newDateCreate,
                     title = newTitle, descr = newDescr, isPin = newIsPin, isComplete = newIsComplete });
             }
 

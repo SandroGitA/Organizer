@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.IO;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace WebApplication1.Controllers
 {
@@ -15,10 +20,13 @@ namespace WebApplication1.Controllers
         }             
 
         [HttpPost]
-        public string Post(string jsonString)
+        public string Post(newTask newTask)
         {
-            PostRequest postRequest = new PostRequest();
-            return postRequest.PostJson(jsonString);
+            /*var a = HttpContext.Request.Body;
+            var b = HttpContext.Response.Body;*/
+            //PostRequest postRequest = new PostRequest();           
+            //return postRequest.PostJson(jsonString);
+            return "200";
         }
 
         [HttpPost("delete")]

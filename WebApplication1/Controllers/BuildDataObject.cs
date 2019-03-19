@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace WebApplication1.Controllers
 {
     public class BuildDataObject
     {
-        public Data BuildData(string dataString)
+        public newTask BuildData(string dataString)
         {
-            Data responseJsonString = JsonConvert.DeserializeObject<Data>(dataString);
+            newTask responseJsonString = JsonConvert.DeserializeObject<newTask>(dataString);
 
             responseJsonString.isPin = ConvertBoolField.Convert(responseJsonString.isPin);
             responseJsonString.isComplete = ConvertBoolField.Convert(responseJsonString.isComplete);

@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
                 MySqlConnection mySqlConnect = connect.SqlConnect();
 
                 BuildDataObject buildDataObject = new BuildDataObject();
-                Data responseJsonString = buildDataObject.BuildData(jsonString);
+                newTask responseJsonString = buildDataObject.BuildData(jsonString);
 
                 MySqlCommand cmd = new MySqlCommand
                 {
