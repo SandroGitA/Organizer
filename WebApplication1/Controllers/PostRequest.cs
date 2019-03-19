@@ -34,15 +34,14 @@ namespace WebApplication1.Controllers
                 {
                     int countRows = cmd.ExecuteNonQuery();
                     mySqlConnect.Close();
-                    //return responseJsonString.id.ToString();
                     return "201";
                 }
                 catch (MySqlException ex)
                 {
                     string cmdStatus = ex.Message;
                     mySqlConnect.Close();
-                    //return "Error: " + cmdStatus;
-                    return "501";
+                    return cmdStatus;
+                    //return "501";
                 }
             }
         }
