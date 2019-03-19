@@ -11,13 +11,13 @@ namespace WebApplication1.Controllers
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();
 
-            BuildDataObject buildDataObject = new BuildDataObject();
-            newTask responseJsonString = buildDataObject.BuildData(jsonString);           
+            EditDataObject buildDataObject = new EditDataObject();
+            EditTask responseJsonString = buildDataObject.BuildData(jsonString);
 
             MySqlCommand cmd = new MySqlCommand
             {
-                CommandText = $"update organizer set descr = '{responseJsonString.descr}', isPin = '{responseJsonString.isPin}', " +
-                $"isComplete = '{responseJsonString.isComplete}' where id = '{responseJsonString.id}'",
+                CommandText = $"update organizer set {responseJsonString.propName} = " +
+                $"'{responseJsonString.value}' where id = '{responseJsonString.id}' ",
                 Connection = mySqlConnect
             };
           
