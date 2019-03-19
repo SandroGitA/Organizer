@@ -20,13 +20,10 @@ namespace WebApplication1.Controllers
         }             
 
         [HttpPost]
-        public string Post(newTask newTask)
-        {
-            /*var a = HttpContext.Request.Body;
-            var b = HttpContext.Response.Body;*/
-            //PostRequest postRequest = new PostRequest();           
-            //return postRequest.PostJson(jsonString);
-            return "200";
+        public string Post(string jsonString)
+        {            
+            PostRequest postRequest = new PostRequest();           
+            return postRequest.PostJson(jsonString);
         }
 
         [HttpPost("delete")]

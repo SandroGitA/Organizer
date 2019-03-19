@@ -12,10 +12,4 @@ namespace WebApplication1.Controllers
         public object isPin { get; set; }
         public object title { get; set; }                   
     }
-
-    /*public class newTask
-    {
-        public string title { get; set; }
-        public string descr { get; set; }              
-    }*/
 }
