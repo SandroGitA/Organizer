@@ -1,5 +1,4 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace WebApplication1.Controllers
 {
@@ -13,7 +12,10 @@ namespace WebApplication1.Controllers
             responseJsonString.isComplete = ConvertBoolField.Convert(responseJsonString.isComplete);
             responseJsonString.dateBind = ConvertDataField.Convert(responseJsonString.dateBind);
             responseJsonString.dateCreate = ConvertDataField.Convert(responseJsonString.dateCreate);
-            responseJsonString.id = Guid.NewGuid().GetHashCode();
+            //responseJsonString.id = Guid.NewGuid().GetHashCode();
+            //responseJsonString.dateBind = responseJsonString.dateBind;
+            //responseJsonString.dateCreate = responseJsonString.dateCreate;
+            //responseJsonString.id = responseJsonString.id;
 
             return responseJsonString;
         }
