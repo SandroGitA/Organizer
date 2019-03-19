@@ -9,8 +9,13 @@ namespace WebApplication1.Controllers
     {
         public static string Convert(object date)
         {
-            DateTime dt = DateTime.Parse(date.ToString());
-            return dt.ToString("yyyy.MM.dd HH:mm:ss");
+            if (date == null)
+                return "";
+            else
+            {
+                DateTime dt = DateTime.Parse(date.ToString());
+                return dt.ToString("yyyy.MM.dd HH:mm:ss");
+            }
         }
     }
 }

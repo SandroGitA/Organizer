@@ -9,7 +9,9 @@ namespace WebApplication1.Controllers
     {
         public static object Convert(object fieldInData)
         {
-            if ((bool)fieldInData == true)
+            if (fieldInData == null)
+                return fieldInData = 0;
+            else if ((bool)fieldInData == true)
                 return fieldInData = 1;
             else if ((bool)fieldInData == false)
                 return fieldInData = 0;
