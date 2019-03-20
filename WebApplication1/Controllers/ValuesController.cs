@@ -12,7 +12,7 @@ namespace WebApplication1.Controllers
         {
             GetRequest getRequest = new GetRequest();
             return getRequest.GetJson();           
-        }             
+        }        
 
         [HttpPost]
         public string Post(string jsonString)
@@ -22,10 +22,10 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost("delete")]
-        public string Delete(int id)
+        public string Delete(string jsonString)
         {
             DeleteRequest deleteRequest = new DeleteRequest();
-            return deleteRequest.Delete(id);
+            return deleteRequest.Delete(jsonString);
         }
 
         [HttpPost("edit")]
