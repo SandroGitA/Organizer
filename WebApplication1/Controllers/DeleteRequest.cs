@@ -4,14 +4,17 @@ namespace WebApplication1.Controllers
 {
     public class DeleteRequest
     {
-        public string Delete(int id)
+        public string Delete(string jsonString)
         {
             Connect connect = new Connect();
             MySqlConnection mySqlConnect = connect.SqlConnect();
 
+            DeleteDataObject deleteDataObject = new DeleteDataObject();
+            DeleteTask deleteTask = deleteDataObject.BuildData(jsonString);
+
             MySqlCommand cmd = new MySqlCommand
             {
-                CommandText = $"delete from organizer where id = {id}",
+                CommandText = $"delete from organizer where id = {deleteTask.id}",
                 Connection = mySqlConnect
             };
             
