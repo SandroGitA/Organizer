@@ -2,7 +2,7 @@
 
 namespace WebApplication1.Controllers
 {
-    public class BuildDataObject
+    public class NewDataObject
     {
         public newTask BuildData(string dataString)
         {
