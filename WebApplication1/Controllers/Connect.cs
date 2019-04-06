@@ -25,12 +25,10 @@ namespace WebApplication1.Controllers
             try
             {
                 connectMySql.Open();
-                //connectStatus = "OK";
             }
             catch (MySqlException ex)
             {
                 connectStatus = ex.Message;//записываем сообщение об ошибке, но не возвращаем его(!)
-                //return new string[] { connectStatus };
             }
             return connectMySql;
         }

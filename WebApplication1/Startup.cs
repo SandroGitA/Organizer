@@ -15,6 +15,7 @@ using System.Configuration;
 using Microsoft.AspNetCore.HttpOverrides;
 using System.Net;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace WebApplication1
 {
@@ -42,7 +43,6 @@ namespace WebApplication1
             else
                 app.UseHsts();
 
-            //app.UseHttpsRedirection();
             app.UseCors("New");
             app.UseMvc();
             //app.UseForwardedHeaders(new ForwardedHeadersOptions { ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto });
