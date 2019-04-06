@@ -41,7 +41,6 @@ namespace WebApplication1.Controllers
                     string cmdStatus = ex.Message;
                     mySqlConnect.Close();
                     return cmdStatus;
-                    //return "501";
                 }
             }
         }
