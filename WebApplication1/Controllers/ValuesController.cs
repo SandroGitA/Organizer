@@ -14,7 +14,7 @@ namespace WebApplication1.Controllers
             return getRequest.GetJson();           
         }        
 
-        [HttpPost]
+        [HttpPost("new-task")]
         public string Post(string jsonString)
         {            
             PostRequest postRequest = new PostRequest();           
